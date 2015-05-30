@@ -1,6 +1,7 @@
 'use strict'; 
 //grab gulp packages
 var gulp = require('gulp'); 
+var browserSync = require('browser-sync').create(); 
 var gutil = require('gulp-util'); 
 var plugins = require('gulp-load-plugins')(); 
 var minifyCss = require('gulp-minify-css');
@@ -22,6 +23,13 @@ gulp.task('build-css', function(){
 				.pipe(gulp.dest('./public/css/stylesheets')); 
 });
 
-gulp.task('watch', function(){
+gulp.task('watch', ['browser-sync'], function(){
 	gulp.watch('public/sass/**/*.scss', ['build-css']);
+});
+
+// Static Server
+gulp.task('browser-sync', function() {
+	browserSync.init(["./public/css/stylesheets/*.css"],{
+		proxy: "localhost:8080"
+	});
 });

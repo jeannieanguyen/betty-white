@@ -1,6 +1,6 @@
 {
-  "name": "heroku-node",
-  "description": "Our sample Node to Heroku app",
+  "name": "betty-white",
+  "description": "Tool testing site",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
@@ -10,6 +10,7 @@
     "express": "~4.9.8"
   },
   "devDependencies": {
+    "browser-sync": "^2.7.6",
     "gulp": "^3.8.11",
     "gulp-concat-css": "^2.2.0",
     "gulp-load-plugins": "^0.10.0",
